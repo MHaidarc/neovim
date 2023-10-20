@@ -10,9 +10,9 @@ M.dap = {
       "<cmd> DapContinue <CR>",
       "Começa ou continua o debugger",
     },
-    [";"]= {
-      ":"
-    }
-  }
+    [";"] = {
+      ":",
+    },
+  },
 }
 return M
