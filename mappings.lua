@@ -9,6 +9,9 @@ M.dap = {
     ["<leader>dr"] = {
       "<cmd> DapContinue <CR>",
       "Começa ou continua o debugger",
+    },
+    [";"]= {
+      ":"
     }
   }
 }
