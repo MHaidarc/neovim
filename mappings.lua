@@ -1,4 +1,17 @@
 local M = {}
+
+M.general = {
+  n = {
+    ["ç"] = {
+      ":",
+    },
+    ["<C-h>"] = { "<cmd> TmuxNavigateLeft<CR>", "janela para esquerda" },
+    ["<C-l>"] = { "<cmd> TmuxNavigateRight<CR>", "janela para direita" },
+    ["<C-j>"] = { "<cmd> TmuxNavigateDown<CR>", "janela para baixo" },
+    ["<C-k>"] = { "<cmd> TmuxNavigateUp<CR>", "janela para cima" },
+  },
+}
+
 M.dap = {
   plugin = true,
   n = {
@@ -9,9 +22,6 @@ M.dap = {
     ["<leader>dr"] = {
       "<cmd> DapContinue <CR>",
       "Começa ou continua o debugger",
-    },
-    [";"] = {
-      ":",
     },
   },
 }
