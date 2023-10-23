@@ -3,6 +3,7 @@ local M = {}
 M.ui = {
   theme = "catppuccin",
   transparency = true,
+
   nvdash = {
     load_on_startup = true,
 
@@ -50,6 +51,7 @@ M.ui = {
   },
 }
 vim.o.shell = "zsh"
+vim.opt.relativenumber = true
 M.plugins = "custom.plugins"
 M.mappings = require "custom.mappings"
 return M
