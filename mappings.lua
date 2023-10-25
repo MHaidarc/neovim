@@ -5,6 +5,9 @@ M.general = {
     ["ç"] = {
       ":",
     },
+    ["Ç"] = {
+      ":",
+    },
     ["<C-h>"] = { "<cmd> TmuxNavigateLeft<CR>", "janela para esquerda" },
     ["<C-l>"] = { "<cmd> TmuxNavigateRight<CR>", "janela para direita" },
     ["<C-j>"] = { "<cmd> TmuxNavigateDown<CR>", "janela para baixo" },
