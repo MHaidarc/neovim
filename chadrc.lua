@@ -48,6 +48,13 @@ M.ui = {
       bg = "none",
       fg = "light_grey",
     },
+    Comment = {
+      italic = true,
+      fg = "nord_blue",
+    },
+    LineNr = {
+      fg = "purple",
+    },
   },
 }
 vim.o.shell = "zsh"
