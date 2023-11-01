@@ -70,6 +70,12 @@ local plugins = {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
+        "html-lsp",
+        "css-lsp",
+        "js-debug-adapter",
+        "prettier",
+        "eslint-lsp",
+        "typescript-language-server",
         "codelldb",
         "clangd",
         "clang-format",
