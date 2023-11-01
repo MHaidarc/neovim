@@ -56,6 +56,11 @@ M.ui = {
       fg = "purple",
     },
   },
+  statusline = {
+    theme = "minimal",
+    separator_style = "round",
+    overriden_modules = nil,
+  },
 }
 vim.o.shell = "zsh"
 vim.opt.relativenumber = true
