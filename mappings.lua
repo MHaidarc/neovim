@@ -15,6 +15,14 @@ M.general = {
     ["<C-l>"] = { "<cmd> TmuxNavigateRight<CR>", "janela para direita" },
     ["<C-j>"] = { "<cmd> TmuxNavigateDown<CR>", "janela para baixo" },
     ["<C-k>"] = { "<cmd> TmuxNavigateUp<CR>", "janela para cima" },
+    ["<leader>sv"] = {
+      "<cmd> vsplit <CR>",
+      "splita a janela verticalmente",
+    },
+    ["<leader>sh"] = {
+      "<cmd> split <CR>",
+      "splita a janela verticalmente",
+    },
   },
 }
 
