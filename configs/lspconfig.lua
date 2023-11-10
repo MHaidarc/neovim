@@ -1,7 +1,7 @@
 local base = require "plugins.configs.lspconfig"
 local on_attach = base.on_attach
 local capabilities = base.capabilities
-
+local util = require "lspconfig/util"
 local lspconfig = require "lspconfig"
 
 lspconfig.clangd.setup {
@@ -49,8 +49,23 @@ lspconfig.html.setup {
   capabilities = capabilities,
   filetypes = { "html" },
 }
+
 lspconfig.cssls.setup {
   on_attach = on_attach,
   capabilities = capabilities,
   filetypes = { "css" },
+}
+
+lspconfig.rust_analyzer.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = { "rust" },
+  root_dir = util.root_pattern "Cargo.toml",
+  settings = {
+    ["rust_analyzer"] = {
+      cargo = {
+        allFeatures = true,
+      },
+    },
+  },
 }
