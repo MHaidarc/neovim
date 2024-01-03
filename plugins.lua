@@ -1,5 +1,18 @@
 local plugins = {
   {
+    "windwp/nvim-ts-autotag",
+    ft = {
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact",
+      "html",
+    },
+    config = function()
+      require("nvim-ts-autotag").setup()
+    end,
+  },
+  {
     "saecki/crates.nvim",
     ft = { "rust", "toml" },
     config = function(_, opts)
@@ -77,7 +90,7 @@ local plugins = {
     end,
   },
   {
-    "jose-elias-alvarez/null-ls.nvim",
+    "nvimtools/none-ls.nvim",
     event = "VeryLazy",
     opts = function()
       return require "custom.configs.null-ls"
@@ -97,7 +110,7 @@ local plugins = {
         "html-lsp",
         "css-lsp",
         "js-debug-adapter",
-        "prettier",
+        "prettierd",
         "eslint-lsp",
         "typescript-language-server",
         "codelldb",
@@ -111,6 +124,20 @@ local plugins = {
         "debugpy",
         "rust-analyzer",
       },
+    },
+    {
+      "nvim-treesitter/nvim-treesitter",
+      opts = function()
+        opts = require "plugins.configs.treesitter"
+        opts.ensure_installed = {
+          "lua",
+          "c",
+          "cpp",
+          "rust",
+          "python",
+        }
+        return opts
+      end,
     },
   },
 }

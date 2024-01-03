@@ -4,6 +4,15 @@ local capabilities = base.capabilities
 local util = require "lspconfig/util"
 local lspconfig = require "lspconfig"
 
+local servers = { "pyright", "html", "cssls", "eslint", "lua_ls" }
+
+for _, lsp in ipairs(servers) do
+  lspconfig[lsp].setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+  }
+end
+
 lspconfig.clangd.setup {
   on_attach = function(client, bufnr)
     client.server_capabilities.signatureHelpProvider = false
@@ -11,12 +20,6 @@ lspconfig.clangd.setup {
   end,
   capabilities = capabilities,
   filetypes = { "c", "cpp", "h", "hpp" },
-}
-
-lspconfig.pyright.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  filetypes = { "python" },
 }
 
 local function organize_imports()
@@ -42,18 +45,6 @@ lspconfig.tsserver.setup {
     },
   },
   filetypes = { "javascript", "typescript" },
-}
-
-lspconfig.html.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  filetypes = { "html" },
-}
-
-lspconfig.cssls.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  filetypes = { "css" },
 }
 
 lspconfig.rust_analyzer.setup {
